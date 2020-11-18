@@ -38,12 +38,12 @@ function preload() { //api used: https://anapioficeandfire.com
   tar = loadImage('House/tar.png')
   no = loadImage('House/no.png')
   //w = loadImage('char/ww.png')
-
+//ver2
 
 }
 
 function setup() {
-  createCanvas(windowWidth, 2000);
+  createCanvas(windowWidth, windowWidth);
 
   selectBook = createSelect();
   selectBook.position(270, 135)
@@ -55,13 +55,13 @@ function setup() {
   selectBook.option('Unreleased');
 
   selectChar = createSelect();
-  selectChar.position(930, 135)
+  selectChar.position(860, 135)
   selectChar.option('Daenerys Targaryen');
   selectChar.option('Jon Snow');
   //selectChar.option('White Walker');
 
   selectHouses = createSelect()
-  selectHouses.position(1380, 135)
+  selectHouses.position(1210, 135)
   selectHouses.option('House Targaryen');
   selectHouses.option('Random');
 
@@ -84,8 +84,8 @@ function draw() {
   text("Select book here:", 90, 150)
   selectBooks()
   textSize(22);
-  text("Main Characters here:", 700, 150)
-  text("Houses:", 1290, 150)
+  text("Main Characters here:", 630, 150)
+  text("Houses:", 1120, 150)
   selectChars()
   selectHouse()
 
@@ -95,7 +95,7 @@ function selectHouse() {
   let h = selectHouses.value()
 
   push()
-  translate(-30, 0)
+  translate(-200, 0)
   if (h == "House Targaryen") {
     text("Name: " + getHouse(houseT), 1320, 190)
     text("Region: " + getRegion(houseT), 1320, 220)
@@ -119,7 +119,7 @@ textSize(16)
 
 function selectChars() {
   push()
-  translate(-70, 0)
+  translate(-140, 0)
   let c = selectChar.value()
   if (c == "Daenerys Targaryen") {
     text("Name: " + getName(dany), 770, 190)
@@ -155,38 +155,38 @@ function selectChars() {
 
 function selectBooks() {
   push()   //images from Amazon.com
-  translate(30, 90);
+  translate(0, 90);
   let b = selectBook.value()
   textFont('Georgia')
   if (b == 'Book 1') {
-    text("The first book of GoT is called: " + getBook(book1), 60, 100);
+    text("The first book of GoT is called: " + getBook(book1), 90, 100);
     image(b1, 100, 150, 230, 350)
   }
   if (b == 'Book 2') {
-    text("The second book of GoT is called: " + getBook(book2), 60, 100);
+    text("The second book of GoT is called: " + getBook(book2), 90, 100);
     image(b2, 100, 150, 230, 350)
   }
   if (b == 'Book 3') {
-    text("The third book of GoT is called: " + getBook(book3), 60, 100);
+    text("The third book of GoT is called: " + getBook(book3), 90, 100);
     image(b3, 100, 150, 230, 350)
   }
   if (b == 'Book 4') {
-    text("The fourth book of GoT is called: " + getBook(book4), 60, 100);
+    text("The fourth book of GoT is called: " + getBook(book4), 90, 100);
     image(b4, 100, 150, 230, 350)
   }
   if (b == 'Book 5') {
-    text("The fifth book of GoT is called: " + getBook(book5), 60, 100);
+    text("The fifth book of GoT is called: " + getBook(book5), 90, 100);
     image(b5, 100, 150, 230, 350)
   }
   if (b == 'Unreleased') {
-    text("The yet-to-release books of GoT are called: ", 60, 100);
-    text(getBook(book6) + ",", 60, 150);
-    text(getBook(book7) + ", ", 60, 180);
-    text(getBook(book8) + ",", 60, 210);
-    text(getBook(book9) + ", ", 60, 240);
-    text(getBook(book10) + ",", 60, 270);
-    text(getBook(book11) + ",", 60, 300);
-    text("and, " + getBook(book12) + ". ", 60, 330);
+    text("The yet-to-release books of GoT are called: ", 90, 100);
+    text(getBook(book6) + ",", 90, 150);
+    text(getBook(book7) + ", ", 90, 180);
+    text(getBook(book8) + ",", 90, 210);
+    text(getBook(book9) + ", ", 90, 240);
+    text(getBook(book10) + ",", 90, 270);
+    text(getBook(book11) + ",", 90, 300);
+    text("and, " + getBook(book12) + ". ", 90, 330);
   }
   pop()
 }
